@@ -1,0 +1,8 @@
+---
+- name: Install selinux tools Redhat
+  yum: name="{{item}}" state=installed
+  when: ansible_os_family == 'RedHat'
+  tags: install
+  with_items:
+    - libselinux-python
+    - policycoreutils-python

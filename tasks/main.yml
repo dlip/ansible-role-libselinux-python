@@ -1,5 +1,10 @@
 ---
-- name: Install libselinux-python Redhat
-  yum: name=libselinux-python state=installed
-  when: ansible_os_family == 'RedHat'
+
+- include: install.yml
+  when: ansible_selinux.status == "enabled"
   tags: install
+
+- include: config.yml
+  when: ansible_selinux.status == "enabled"
+  tags: config
+

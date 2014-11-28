@@ -1,2 +1,4 @@
 ---
-# defaults file for dlip.libselinux-python
+# enforcing/permissive/disabled When set to disabled a system restart is required to activate.
+selinux_state: enforcing
+selinux_policy: targeted
